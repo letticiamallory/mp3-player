@@ -1,0 +1,285 @@
+body {
+  background: linear-gradient(45deg, #e6e6fa, #dda0dd);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+}
+
+.player-container {
+  position: relative;
+  width: 400px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(147, 112, 219, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.vinyl-container {
+  position: relative;
+  margin: 20px auto;
+}
+
+.vinyl {
+  width: 280px;
+  height: 280px;
+  background: #4b0082;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(75, 0, 130, 0.5);
+  background-image: linear-gradient(45deg, #000 25%, transparent 25%),
+    linear-gradient(-45deg, #000 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(-45deg, transparent 75%, #000 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.vinyl::after {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.vinyl-image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #e6e6fa;
+  z-index: 2;
+}
+
+.tonearm {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -25px;
+  right: -20px;
+  transform: rotate(-25deg);
+  transform-origin: right bottom;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.tonearm .arm {
+  width: 80px;
+  height: 4px;
+  background: #9370db;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform-origin: right center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.tonearm .head {
+  width: 18px;
+  height: 18px;
+  background: #ba55d3;
+  position: absolute;
+  right: -8px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 3px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.playing .vinyl {
+  animation: spin 2s linear infinite;
+}
+
+.playing .tonearm {
+  transform: rotate(-15deg);
+}
+
+.controls {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+button {
+  background: #9370db;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  background: #ba55d3;
+  transform: scale(1.1);
+}
+
+.progress-container {
+  background: rgba(255, 255, 255, 0.3);
+  height: 4px;
+  border-radius: 2px;
+  margin: 20px auto;
+  width: 80%;
+  cursor: pointer;
+}
+
+.progress-bar {
+  height: 100%;
+  background: #ba55d3;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.message-box {
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  min-height: 40px;
+  font-style: italic;
+  color: #4b0082;
+}
+
+.song-info {
+  color: #4b0082;
+  margin: 20px 0;
+}
+/* No arquivo style.css */
+
+.player-container {
+  /* Mantenha as propriedades existentes e adicione: */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.song-info {
+  /* Substitua o CSS existente por: */
+  text-align: center;
+  margin: 0;
+  order: -1; /* Move o texto para cima do vinil */
+}
+
+.vinyl-container {
+  margin: 10px auto; /* Reduz a margem */
+}
+
+.message-box {
+  margin: 0 0 15px 0; /* Ajuste de margem */
+}
+button {
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: #4b0082;
+  padding: 12px 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(75, 0, 130, 0.3);
+}
+
+/* Mantenha o resto do CSS igual */
+/* No arquivo style.css - Seção dos botões */
+button {
+  background: none;
+  border: none;
+  color: #4b0082; /* Cor do ícone */
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
+  font-size: 24px;
+  transition: all 0.3s;
+}
+
+button:hover {
+  color: #ba55d3; /* Cor do ícone ao passar o mouse */
+  transform: scale(1.2);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+/* Remova qualquer outra propriedade relacionada aos botões */
+/* No arquivo style.css */
+
+.vinyl {
+  /* Mantenha todas as propriedades existentes */
+  position: relative; /* Adicione isso se não existir */
+}
+
+.vinyl-image {
+  position: absolute;
+  width: 100%; /* Alterado de 100px para 100% */
+  height: 100%; /* Alterado de 100px para 100% */
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-size: cover;
+  background-position: center;
+  border: none; /* Remova a borda */
+  z-index: 1; /* Garante que a foto fique sobre o disco */
+}
+
+.vinyl::after {
+  /* Ajuste o pseudo-elemento central */
+  content: "";
+  position: absolute;
+  width: 30px; /* Reduzindo o tamanho */
+  height: 30px; /* Reduzindo o tamanho */
+  background: #fff;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 2; /* Mantém o centro branco acima da foto */
+}
+.message-box {
+  /* Mantenha ou ajuste o estilo conforme preferir */
+  margin: 15px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  min-height: 40px;
+  font-style: italic;
+  color: #4b0082;
+}
