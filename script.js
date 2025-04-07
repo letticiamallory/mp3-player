@@ -1,5 +1,14 @@
 const songs = [
   {
+    title: "To Build A Home",
+    artist: "The Cinematic Orchestra",
+    file: "musicas/The Cinematic Orchestra - To Build A Home.mp3",
+    photo: "fotos/WhatsApp Image 2025-04-07 at 16.09.49.jpeg",
+    message:
+      "Espero que viva a faixa bônus da vida comigo antes que o nosso album acabe.",
+  },
+
+  {
     title: "Pretty",
     artist: "JVKE",
     file: "musicas/JVKE-pretty-(official-lyric-video).mp3",
