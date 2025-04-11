@@ -1,5 +1,14 @@
 const songs = [
   {
+    title: "Margaridas",
+    artist: "Hadassa Mazarão",
+    file: "musicas/Margaridas- Hadassa Mazarão (Clipe Oficial).mp3",
+    photo: "fotos/WhatsApp Image 2025-04-11 at 15.06.51.jpeg",
+    message:
+      "Você me escolheu entre todas as flores e eu também te escolhi e as margaridas são a representação mais pura do nosso amor.",
+  },
+
+  {
     title: "To Build A Home",
     artist: "The Cinematic Orchestra",
     file: "musicas/The Cinematic Orchestra - To Build A Home.mp3",
